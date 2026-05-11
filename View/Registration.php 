@@ -5,7 +5,7 @@
     <h2>Hotel Booking Portal Register</h2>
     <p>Create your guest account</p>
 
-    <form id = "resgisterForm" method="POST">
+    <form id = "resgisterForm" onsubmit="return validateRegister()">
         <label for="name">Full Name : </label><br>
         <input type="text" name="name" id="name" placeholder = "Enter your Name"><br>
         <span id= "nameError" style="color:red"></span>
@@ -43,5 +43,10 @@
         <button type="submit">Create Account</button>
 
     </form>
+      <p>Already have account? <a href="login.php">Sign in here</a></p>
+
+    <script src="../../ajax/validateRegister.js"></script>
+
 </body>
 </html>
+
