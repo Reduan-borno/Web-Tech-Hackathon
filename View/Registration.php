@@ -5,17 +5,17 @@
     <h2>Hotel Booking Portal Register</h2>
     <p>Create your guest account</p>
 
-    <form id = "resgisterForm" onsubmit="return validateRegister()">
+    <form id = "registerForm" onsubmit="return validateRegister()">
         <label for="name">Full Name : </label><br>
-        <input type="text" name="name" id="name" placeholder = "Enter your Name"><br>
-        <span id= "nameError" style="color:red"></span>
+        <input type="text" name="name" id="name" placeholder = "Enter your Name">
+        <span id= "nameError" style="color:red"></span><br>
 
         <label for="email">Email : </label> <br>
-        <input type="email" name="email" id="email" placeholder="Enter Your Email"><br>      
-        <span id="emailError" style="color:red"></span> 
+        <input type="email" name="email" id="email" placeholder="Enter Your Email">      
+        <span id="emailError" style="color:red"></span> <br>
 
         <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number"><br>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number">
         <span id="phoneError" style="color:red;"></span><br>
 
         <label for="nationality">Nationality:</label><br>
@@ -29,15 +29,15 @@
             <option value="Canadian">Canadian</option>
             <option value="Australian">Australian</option>
             <option value="Others">Others</option>
-        </select><br>
+        </select>
         <span id="nationalityError" style="color:red;"></span><br>
 
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="atleast 8 character"><br>
+        <input type="password" id="password" name="password" placeholder="atleast 8 character">
         <span id="passwordError" style="color:red;"></span><br>
 
         <label for="confirm_password">Confirm Password:</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat password"><br>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat password">
         <span id="confirmError" style="color:red;"></span><br>
         <br>
         <button type="submit">Create Account</button>
@@ -45,7 +45,7 @@
     </form>
       <p>Already have account? <a href="login.php">Sign in here</a></p>
 
-    <script src="../../ajax/validateRegister.js"></script>
+    <script src="../ajax/validateRegister.js"></script>
 
 </body>
 </html>
