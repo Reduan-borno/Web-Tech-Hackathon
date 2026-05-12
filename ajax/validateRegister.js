@@ -1,11 +1,12 @@
+console.log("validateRegister.js loaded!");
 function validateRegister()
 {
-    let name        = document.getElementById("name").value;
-    let email       = document.getElementById("email").value;
-    let phone       = document.getElementById("phone").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
     let nationality = document.getElementById("nationality").value;
-    let password    = document.getElementById("password").value;
-    let confirm     = document.getElementById("confirm_password").value;
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm_password").value;
 
     let xhttp = new XMLHttpRequest();
 
@@ -24,6 +25,7 @@ function validateRegister()
             if (data.success)
             {
                 alert("Validation Successful");
+                // window.location.href = "/Web_Tech_Final/Assignmet/views/auth/login.php";
 
             }
 
@@ -62,8 +64,8 @@ function validateRegister()
         }
     };
 
-    xhttp.open("POST", "../Controller/registerController.php", true);
-    xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xhttp.open("POST", "../controllers/registerController.php", true);  
+  xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     xhttp.send("name=" + encodeURIComponent(name) +"&email=" + encodeURIComponent(email) +"&phone=" + encodeURIComponent(phone) +"&nationality=" + encodeURIComponent(nationality) +
         "&password=" + encodeURIComponent(password) +"&confirm_password=" + encodeURIComponent(confirm));
@@ -71,3 +73,8 @@ function validateRegister()
     return false;
     
 }
+
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    validateRegister();
+});
