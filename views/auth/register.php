@@ -3,7 +3,7 @@
     <title>Register Hotel Booking</title>
 </head>
 <body>
-    <h2>🏨 Hotel Booking Portal — Register</h2>
+    <h2> Hotel Booking Portal — Register</h2>
     <p>Create your guest account</p>
     <hr>
 
