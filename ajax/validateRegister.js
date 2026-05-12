@@ -64,7 +64,7 @@ function validateRegister()
         }
     };
 
-  xhttp.open("POST", "../controllers/registerController.php", true);  
+  xhttp.open("POST", "/Web_Tech_Final/Assignmet/controllers/registerController.php", true);  
   xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     xhttp.send("name=" + encodeURIComponent(name) +"&email=" + encodeURIComponent(email) +"&phone=" + encodeURIComponent(phone) +"&nationality=" + encodeURIComponent(nationality) +

@@ -9,7 +9,7 @@
 
     <form id = "registerForm">
         <label for="name">Full Name:</label><br>
-        <input type="text" name="name" id="name" placeholder = "Shihab Khan">
+        <input type="text" name="name" id="name" placeholder = "Reduanul Islam">
         <span id= "nameError" style="color:red"></span><br>
 
         <label for="email">Email Address:</label> <br>
