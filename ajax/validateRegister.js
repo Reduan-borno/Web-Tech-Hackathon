@@ -25,7 +25,7 @@ function validateRegister()
             if (data.success)
             {
                 alert("Validation Successful");
-                // window.location.href = "/Web_Tech_Final/Assignmet/views/auth/login.php";
+                window.location.href = "/Web_Tech_Final/Assignmet/views/auth/login.php";
 
             }
 

@@ -56,5 +56,3 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 }
 ?>
-
- <!-- /Applications/XAMPP/xamppfiles/htdocs/Web_Tech_Final/Assignmet -->
