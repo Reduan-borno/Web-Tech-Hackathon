@@ -1,17 +1,59 @@
-body{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: white;
-    
-    position: relative;
-    left: 50%;
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: white;
+
+  position: relative;
+  left: 50%;
+  
 }
 
-h2{
-    color: #444;
-    letter-spacing: 1px;
-    text-shadow: 
-        1px 1px 0 #999,
-        2px 2px 0 #777,
-        3px 3px 5px rgba(0,0,0,0.3);
+h2 {
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  text-shadow:
+    1px 1px 0 #999,
+    2px 2px 0 #777,
+    3px 3px 4px rgba(0, 0, 0, 0.3);
+}
 
+#createAccount {
+  color: #2c1c1c;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-top: -8px;
+  margin-bottom: 25px;
+}
+
+.form-input {
+    width: 20%;
+  padding: 5px 20px;
+  display: inline-block;
+  border: 2px solid #3e5e1e;
+  border-radius: 15px;
+  background-color: #ecf3e0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.form-input:hover::placeholder {
+    color: transparent;
+}
+.form-input:hover {
+    border-color: #3e5e1e;    
+    background-color: #ecf3e0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.form-input:focus {
+    border-color: #2d4515;
+    background-color: #e2ebd5;
+    border-width: 3px; 
+}
+
+.error-message {
+  display: block;
+  color: #ff6b6b;
+  font-size: 14px;
 }
