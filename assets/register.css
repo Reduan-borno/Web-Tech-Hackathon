@@ -1,0 +1,17 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    
+    position: relative;
+    left: 50%;
+}
+
+h2{
+    color: #444;
+    letter-spacing: 1px;
+    text-shadow: 
+        1px 1px 0 #999,
+        2px 2px 0 #777,
+        3px 3px 5px rgba(0,0,0,0.3);
+
+}
