@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2> Hotel Booking Portal Register</h2>
-    <p>Create your guest account</p>
+    <p id="createAccount">Create your guest account</p>
 
     <form id = "registerForm">
         <label for="name">Full Name</label><br>
@@ -20,8 +20,8 @@
         <input type="tel" id="phone" name="phone" placeholder="01700000000" class="form-input">
         <span id="phoneError" class="error-message"></span><br>
 
-        <label for="nationality">Nationality</label><br>
-        <select id="nationality" name="nationality">
+        <label for="nationality" class=>Nationality</label><br>
+        <select id="nationality" name="nationality" class="form-input">
             <option value="">— Select nationality —</option>
             <option value="Bangladeshi">Bangladeshi</option>
             <option value="Indian">Indian</option>
