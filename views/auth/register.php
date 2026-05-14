@@ -4,6 +4,15 @@
     <link rel="stylesheet" href="../../assets/register.css">
 </head>
 <body>
+
+        <div class="container">
+
+        <div class="left-panel">
+            <p class="panel-brand">LUXURY STAYS</p>
+            <h3 class="panel-heading">Create Account</h3>
+        </div>
+
+     <div class="right-panel">
     <h2> Hotel Booking Portal Register</h2>
     <p id="createAccount">Create your guest account</p>
 
@@ -48,5 +57,8 @@
      <p>Already have an account? <a href="login.php">Sign in here</a></p>
 
     <script src="../../ajax/validateRegister.js"></script>
+
+    </div>
+     </div>
 </body>
 </html>
