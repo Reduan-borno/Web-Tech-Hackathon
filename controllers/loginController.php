@@ -25,6 +25,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             saveRememberToken($connection, $user['id'], $token);
         }
 
+    
+}
+
         if($user['role'] == "admin"){
             header('Location: ../views/admin.php');
             exit;
@@ -39,6 +42,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         exit;
     }
    
-}
 
 ?>
