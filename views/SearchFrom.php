@@ -24,7 +24,7 @@
                 <td>Number of Guests</td>
                 <td><input type="number" name="guests" placeholder="Enter number of guests" /></td>
             </tr>
-
+            <tr></tr>
             <tr>
                 <td></td>
                 <td><input type="submit" name="search" value="Search Rooms" /></td>
