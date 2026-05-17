@@ -16,39 +16,26 @@
           <a href="user.php" class="nav-item active">My Profile</a>
           <a href="searchroom.php" class="nav-item">Search Rooms</a>
            <a href="mybooking.php" class="nav-item">My Bookings</a>
-            <a href="../../controllers/logoutController.php" class="nav-item logout">Logout</a>
+            <a href="../controllers/logoutController.php" class="nav-item logout">Logout</a>
         </nav>
     </div>
 
-    <!-- MAIN -->
+  
     <div class="main-content">
 
         <h2>My Profile</h2>
         <p class="subtitle">Manage your account and preferences</p>
 
-        <!-- Upcoming Booking Card -->
+      
         <div class="booking-card">
-            <!-- If no upcoming booking, show this: -->
+           
             <p class="no-booking">No upcoming stays.</p>
 
-            <!-- If there IS a booking, replace above with this (uncomment when using PHP):
-            <div class="booking-card-inner">
-                <div>
-                    <p class="booking-label">Upcoming Stay</p>
-                    <p class="booking-room">Deluxe Suite</p>
-                    <p class="booking-dates">Jun 20, 2025 &rarr; Jun 23, 2025</p>
-                </div>
-                <div class="booking-right">
-                    <span class="status-badge">Confirmed</span>
-                    <p class="booking-id">Booking #1042</p>
-                </div>
-            </div>
-            -->
         </div>
 
         <div class="form-grid">
 
-            <!-- Edit Profile -->
+           
             <div class="form-box">
                 <h3 class="form-box-title">Edit Profile</h3>
                 <form method="POST" action="../../controllers/profileController.php">
@@ -102,18 +89,18 @@
 
                     <div class="checkbox-group">
                         <input type="checkbox" id="subscribe_offers" name="subscribe_offers" value="1">
-                        <label for="subscribe_offers">Subscribe to offers &amp; deals</label>
+                        <label for="subscribe_offers">Subscribe to offers deals</label>
                     </div>
 
                     <button type="submit" name="update_preferences">Save Preferences</button>
                 </form>
             </div>
 
-        </div><!-- end form-grid -->
+        </div>
 
-    </div><!-- end main-content -->
+    </div>
 
-</div><!-- end page-wrapper -->
+</div>
 
 </body>
 </html>
