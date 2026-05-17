@@ -4,7 +4,7 @@
 function createUser($connection,$name,$email,$password,$phone,$nationality,$role){
     $sql = "INSERT INTO users (name,email,password_hash,phone,nationality,role) VALUES (?,?,?,?,?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sssssss", $name, $email, $password, $phone, $nationality,$role);
+    $stmt->bind_param("ssssss", $name, $email, $password, $phone, $nationality, $role);
     if($stmt -> execute()){
         return true;
     }
