@@ -18,6 +18,10 @@
             <a href="../controllers/logoutController.php" class="nav-item logout">Logout</a>
         </nav>
     </div>
+<<<<<<< HEAD
+=======
+<!-- reduan islam -->
+>>>>>>> a9950983ea9db313fb83e5af8003bc10fd1cdd66
   
     <div class="main-content">
 
