@@ -84,7 +84,6 @@
                     <textarea id="special_requests" name="special_requests"
                         rows="5"
                         placeholder="e.g. High floor, extra pillows, early check-in..."></textarea>
-
                     <div class="checkbox-group">
                         <input type="checkbox" id="subscribe_offers" name="subscribe_offers" value="1">
                         <label for="subscribe_offers">Subscribe to offers deals</label>
@@ -93,7 +92,6 @@
                     <button type="submit" name="update_preferences">Save Preferences</button>
                 </form>
             </div>
-
         </div>
 
     </div>
