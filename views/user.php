@@ -10,7 +10,7 @@
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-        <p class="panel-brand">***** GRAND PALACE</p>
+        <p class="panel-brand">***GRAND PALACE</p>
         <h3 class="panel-heading">Guest<br>Portal</h3>
         <nav class="sidebar-nav">
           <a href="user.php" class="nav-item active">My Profile</a>
