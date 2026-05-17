@@ -11,14 +11,14 @@ body {
     background-color: #f0f4f8;
 }
 
-/* ── Page Layout ── */
+
 .page-wrapper {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
 
-/* ── Sidebar ── */
+
 .sidebar {
     width: 220px;
     flex-shrink: 0;
@@ -81,7 +81,7 @@ body {
     color: #ff8080;
 }
 
-/* ── Main Content ── */
+
 .main-content {
     flex: 1;
     padding: 40px;
@@ -105,7 +105,7 @@ h2 {
     margin-bottom: 24px;
 }
 
-/* ── Upcoming Booking Card ── */
+
 .booking-card {
     background-color: #1a3a6b;
     border-radius: 12px;
@@ -168,7 +168,7 @@ h2 {
     margin: 0;
 }
 
-/* ── Form Grid ── */
+
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -236,7 +236,7 @@ textarea:focus {
     display: block;
 }
 
-/* ── Checkbox ── */
+
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -250,7 +250,6 @@ textarea:focus {
     color: #333;
 }
 
-/* ── Buttons ── */
 button[type="submit"] {
     width: 100%;
     padding: 11px;
@@ -268,7 +267,7 @@ button[type="submit"]:hover {
     background-color: #0d2a52;
 }
 
-/* ── Success Toast ── */
+
 .toast {
     display: none;
     position: fixed;
@@ -287,7 +286,6 @@ button[type="submit"]:hover {
     display: block;
 }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
     .form-grid {
         grid-template-columns: 1fr;
