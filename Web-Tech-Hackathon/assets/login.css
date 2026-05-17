@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    min-height: 400px;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 45%;
+    background-color: #1a3a6b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    border-radius: 8px 0 0 8px;
+}
+
+.panel-brand {
+    left: 5px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+}
+
+.panel-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.panel-sub {
+    font-size: 13px;
+    color: #85B7EB;
+    line-height: 1.7;
+}
+
+.right-panel {
+    width: 55%;
+    padding: 40px;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+     margin-left: 20px;
+    color: #1a3a6b;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+p {
+    margin-left: 20px;
+    color: #1a3a6b;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+#loginForm {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+label {
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+#email, #password {
+    width: 100%;
+    padding: 5px 12px;
+    border: 2px solid #1a3a6b;
+    border-radius: 15px;
+    background-color: #e8eef5;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Cambria, serif;
+}
+
+#email:focus, #password:focus {
+    border-color: #0d2a52;
+    border-width: 3px;
+    outline: none;
+}
+
+#emailError, #passError {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    margin: 0;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    margin-top: 16px;
+    background-color: #1a3a6b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Cambria, serif;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0d2a52;
+}
+
+#registerLink {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+}
+
+#registerLink a {
+    color: #1a3a6b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#registerLink a:hover {
+    text-decoration: underline;
+}
