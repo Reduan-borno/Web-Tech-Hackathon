@@ -5,10 +5,9 @@
  <link rel="stylesheet" href="../assets/user.css">
 </head>
 <body>
-
 <div class="page-wrapper">
 
-    <!-- SIDEBAR -->
+    
     <div class="sidebar">
         <p class="panel-brand">***GRAND PALACE</p>
         <h3 class="panel-heading">Guest<br>Portal</h3>
@@ -19,7 +18,6 @@
             <a href="../controllers/logoutController.php" class="nav-item logout">Logout</a>
         </nav>
     </div>
-
   
     <div class="main-content">
 
