@@ -4,189 +4,152 @@
 
 body {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-color: #0a0f1e;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
-
 
 .container {
     display: flex;
-    width: 80%;
-    max-width: 900px;
-    min-height: 500px;
-    border-radius: 16px;
-    border: 1px solid #1a3a6e;
+    min-height: 400px;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .left-panel {
-    width: 40%;
-    background: linear-gradient(160deg, #0a0f1e 0%, #0f1f45 50%, #1a3a7c 100%);
+    width: 45%;
+    background-color: #1a3a6b;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 40px;
+    border-radius: 8px 0 0 8px;
 }
 
 .panel-brand {
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: #FAC775;
-    font-weight: 600;
-}
-
-.panel-heading {
-    font-size: 36px;
-    font-weight: bold;
-    color: #FAC775;
-    line-height: 1.2;
+    left: 5px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 12px;
 }
 
-.panel-sub {
-    font-size: 14px;
-    color: #85B7EB;
-    line-height: 1.8;
+.panel-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 8px;
 }
 
-/* Right panel */
-.login-container {
-    width: 60%;
-    background: linear-gradient(160deg, #0d1b3e 0%, #111d3a 100%);
-    padding: 50px 48px;
+.panel-sub {
+    font-size: 13px;
+    color: #85B7EB;
+    line-height: 1.7;
+}
+
+.right-panel {
+    width: 55%;
+    padding: 40px;
+    background-color: #f0f4f8;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 h2 {
-    color: #FAC775;
-    font-size: 28px;
-    font-weight: bold;
+     margin-left: 20px;
+    color: #1a3a6b;
+    letter-spacing: 1px;
     margin-bottom: 6px;
-    letter-spacing: 0.5px;
 }
-
-.login-container > p {
-    color: #85B7EB;
+p {
+    margin-left: 20px;
+    color: #1a3a6b;
     font-size: 14px;
-    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
 }
 
 #loginForm {
-    background: #0d1f4a;
-    border: 1px solid #1a3a6e;
-    border-radius: 16px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
 }
 
 label {
-    display: block;
-    color: #85B7EB;
-    font-size: 14px;
-    margin-bottom: 8px;
-    margin-top: 4px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 4px;
 }
 
-#email,
-#password {
+#email, #password {
     width: 100%;
-    padding: 14px 16px;
-    border: 1.5px solid #1a3a6e;
-    border-radius: 10px;
-    background-color: #07112b;
-    color: #E6F1FB;
-    font-size: 15px;
+    padding: 5px 12px;
+    border: 2px solid #1a3a6b;
+    border-radius: 15px;
+    background-color: #e8eef5;
+    font-size: 16px;
+    box-sizing: border-box;
     font-family: Cambria, serif;
+}
+
+#email:focus, #password:focus {
+    border-color: #0d2a52;
+    border-width: 3px;
     outline: none;
-    margin-bottom: 16px;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#email::placeholder,
-#password::placeholder {
-    color: #3a5a8e;
-}
-
-#email:focus,
-#password:focus {
-    border-color: #378ADD;
-    box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.15);
-}
-
-#emailError,
-#passError {
-    color: #E24B4A;
-    font-size: 12px;
-    margin-top: -12px;
-    margin-bottom: 8px;
+#emailError, #passError {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 4px;
     display: block;
 }
-
 
 .checkbox-group {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 4px;
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #FAC775;
-    cursor: pointer;
-    background: #07112b;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 .checkbox-group label {
-    color: #85B7EB;
-    font-size: 14px;
     margin: 0;
-    cursor: pointer;
 }
 
 button[type="submit"] {
     width: 100%;
-    padding: 14px;
-    background-color: #EF9F27;
-    color: #1a1a2e;
+    padding: 11px;
+    margin-top: 16px;
+    background-color: #1a3a6b;
+    color: white;
     border: none;
     border-radius: 10px;
-    font-size: 17px;
+    font-size: 16px;
     font-family: Cambria, serif;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.15s;
 }
 
 button[type="submit"]:hover {
-    background-color: #FAC775;
-    transform: translateY(-1px);
+    background-color: #0d2a52;
 }
-
-button[type="submit"]:active {
-    transform: translateY(0);
-}
-
 
 #registerLink {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 12px;
     font-size: 13px;
-    color: #85B7EB;
+    color: #888;
 }
 
 #registerLink a {
-    color: #FAC775;
+    color: #1a3a6b;
+    font-weight: bold;
     text-decoration: none;
-    font-weight: 600;
 }
 
 #registerLink a:hover {
