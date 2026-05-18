@@ -3,7 +3,11 @@ session_start();
 $errors = $_SESSION['formErrors'] ?? [];
 unset($_SESSION['formErrors']);
 ?>
-
+<html>
+ <head>
+    <title>Manage Rooms</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head><body>
 <h2>Manage Rooms</h2>
 
 <form action="../controllers/RoomController.php?action=add" method="POST">
@@ -59,24 +63,4 @@ unset($_SESSION['formErrors']);
     <?php endwhile; ?>
 </table>
 
-<script>
-document.querySelectorAll('.badge').forEach(badge => {
-    badge.addEventListener('click', function() {
-        const roomId = this.dataset.roomId;
-        fetch('../controllers/ToggleRoomStatusController.php', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: 'room_id=' + roomId
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.success) {
-                this.textContent = data.new_status.charAt(0).toUpperCase() + data.new_status.slice(1);
-                this.className = 'badge ' + data.new_status;
-            } else {
-                alert(data.error);
-            }
-        });
-    });
-});
-</script>
+<script>src="roomStatus.js"></script>
