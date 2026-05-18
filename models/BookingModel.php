@@ -1,4 +1,4 @@
-?php
+<?php
 
 function createBooking($connection, $user_id, $room_id, $checkin, $checkout, $total_price){
     $sql = "INSERT INTO bookings 
