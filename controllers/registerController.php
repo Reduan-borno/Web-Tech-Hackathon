@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 include "../models/db.php";
 include "../models/UserModel.php";
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $database   = new db();
     $connection = $database->connection();
 
@@ -19,14 +19,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $emailCheck = emailExists($connection, $email);
     $errors = [];
-    
+
     if (empty($name)) {
         $errors['name'] = 'Full name is required.';
     }
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'A valid email address is required.';
-    }
-    elseif($emailCheck){
+    } elseif ($emailCheck) {
         $errors['email'] = 'This email is already registered.';
     }
     if (empty($phone)) {
@@ -42,20 +41,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $errors['confirm'] = 'Passwords do not match.';
     }
 
-    if (!empty($errors))
-    {
-        echo json_encode(['success' => false,'errors' => $errors]);
-    }
-    else
-    {
+    if (!empty($errors)) {
+        echo json_encode(['success' => false, 'errors' => $errors]);
+    } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $result = createUser($connection, $name, $email, $hashedPassword, $phone, $nationality, "guest");
+        $result = createUser($connection, $name, $email, $hashedPassword, $phone, $nationality, "user");
         if ($result) {
             echo json_encode(['success' => true]);
         } else {
             echo json_encode(['success' => false, 'errors' => ['general' => 'Registration failed. Try again.']]);
         }
     }
-
 }
 ?>

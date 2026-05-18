@@ -31,7 +31,7 @@
 
                 <div class="form-box">
                     <h3 class="form-box-title">Edit Profile</h3>
-                    <form method="POST" action="../../controllers/profileController.php">
+                    <form method="POST" action="../controllers/profileController.php">
 
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" placeholder="Reduanul Islam">
@@ -65,7 +65,7 @@
 
                 <div class="form-box">
                     <h3 class="form-box-title">Preferences</h3>
-                    <form method="POST" action="../../controllers/profileController.php">
+                    <form method="POST" action="../controllers/profileController.php">
 
                         <label for="preferred_room_type_id">Preferred Room Type</label>
                         <select id="preferred_room_type_id" name="preferred_room_type_id">
