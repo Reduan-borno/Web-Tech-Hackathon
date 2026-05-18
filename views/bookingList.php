@@ -107,3 +107,36 @@
         </div>
 
     </div>
+
+    <div class="section-title">All Reservations</div>
+
+    <div class="filter-bar" id="filter-bar">
+
+        <div class="filter-group">
+            <label class="filter-label" for="status-filter">Status (multi-select)</label>
+            <select id="status-filter" name="status[]" multiple>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="checked_in">Checked In</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label class="filter-label" for="from-date">Check-in from</label>
+            <input type="date" id="from-date" name="from">
+        </div>
+
+        <div class="filter-group">
+            <label class="filter-label" for="to-date">Check-in to</label>
+            <input type="date" id="to-date" name="to">
+        </div>
+
+        <div class="filter-actions">
+            <button class="btn btn-primary" id="btn-apply">Apply Filters</button>
+            <button class="btn btn-secondary" id="btn-reset">Reset</button>
+        </div>
+    </div>
+
+    
