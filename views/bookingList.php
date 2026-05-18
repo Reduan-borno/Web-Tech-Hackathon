@@ -139,4 +139,37 @@
         </div>
     </div>
 
-    
+   <div class="table-wrapper">
+        <div class="table-loader" id="table-loader" hidden>
+            <div class="spinner"></div>
+            <span>Loading bookings…</span>
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="1"/>
+            </svg>
+            <p>No bookings match the selected filters.</p>
+        </div>
+
+        <table class="booking-table" id="booking-table">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Guest Name</th>
+                    <th>Room No.</th>
+                    <th>Room Type</th>
+                    <th>Check-in</th>
+                    <th>Check-out</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="booking-tbody">
+                <!-- JS-injected rows -->
+            </tbody>
+        </table>
+    </div>
+
+    <p class="row-count" id="row-count"></p> 
