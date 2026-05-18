@@ -11,7 +11,7 @@
 
     <div class="container">
         <h2>Sign in</h2>
-        <p>Access your elite account class</p>
+        <p>Access your admin account class</p>
 
         <form id="loginForm" method="POST" action="../../controllers/loginController.php">
             <label for="email">Email address</label>
