@@ -270,3 +270,102 @@ function renderRows(bookings) {
         tbody.appendChild(tr);
     });
 }
+
+function renderStats(s) {
+    statTotal.textContent     = s.total     ?? '—';
+    statConfirmed.textContent = s.confirmed ?? '—';
+    statPending.textContent   = s.pending   ?? '—';
+    statRevenue.textContent   = fmtMoney(s.revenue ?? 0);
+}
+
+function renderTodayPanel(container, countEl, items, emptyMsg) {
+    countEl.textContent = items.length;
+    if (!items.length) {
+        container.innerHTML = <div class="today-empty">${emptyMsg}</div>;
+        return;
+    }
+    container.innerHTML = items.map(b => `
+        <div class="today-item">
+            <span class="room-pill">${b.room_number}</span>
+            <span class="guest">${b.guest_name}</span>
+            <span class="bid">#${b.booking_id}</span>
+        </div>
+    `).join('');
+}
+
+let revenueChart = null;
+
+function renderRevenueChart(labels, data) {
+    const ctx = document.getElementById('revenue-chart').getContext('2d');
+
+    if (revenueChart) revenueChart.destroy();
+
+    const gradient = ctx.createLinearGradient(0, 0, 0, 240);
+    gradient.addColorStop(0,   'rgba(79,124,255,0.55)');
+    gradient.addColorStop(1,   'rgba(79,124,255,0.0)');
+
+    revenueChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [{
+                label: 'Revenue ($)',
+                data,
+                backgroundColor: gradient,
+                borderColor: '#4f7cff',
+                borderWidth: 2,
+                borderRadius: 6,
+                borderSkipped: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#1f2436',
+                    borderColor: '#2a3147',
+                    borderWidth: 1,
+                    titleColor: '#94a3b8',
+                    bodyColor: '#e2e8f0',
+                    callbacks: {
+                        label: ctx => ' $' + Number(ctx.parsed.y).toLocaleString()
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid:  { color: '#2a3147' },
+                    ticks: { color: '#64748b', font: { size: 11 } }
+                },
+                y: {
+                    grid:  { color: '#2a3147' },
+                    ticks: {
+                        color: '#64748b',
+                        font: { size: 11 },
+                        callback: v => '$' + Number(v).toLocaleString()
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+async function fetchBookings() {
+    setLoading(true);
+    try {
+        const res  = await fetch(buildUrl(), { credentials: 'same-origin' });
+        const json = await res.json();
+        if (!json.success) { showToast(json.message ?? 'Error loading bookings.', 'error'); return; }
+        renderRows(json.data.bookings);
+        renderStats(json.data.stats);
+    } catch (e) {
+        console.error(e);
+        showToast('Network error — could not load bookings.', 'error');
+    } finally {
+        setLoading(false);
+    }
+}
+
