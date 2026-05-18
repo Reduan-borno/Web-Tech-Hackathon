@@ -30,6 +30,12 @@ class DatabaseConnection {
         $stmt->bind_param("sss", $username, $password, $imagePath);
         return $stmt->execute();
     }
-
+public function LoginWithPrepareStmt($connection, $tableName, $username, $password) {
+        $sql = "SELECT id, username, image_path FROM $tableName WHERE username = ? AND password = ?";
+        $stmt = $connection->prepare($sql);
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
 }
 ?>
