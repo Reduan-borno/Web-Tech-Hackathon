@@ -369,3 +369,13 @@ async function fetchBookings() {
     }
 }
 
+async function fetchDashboard() {
+    try {
+        const res  = await fetch(API_DASH, { credentials: 'same-origin' });
+        const json = await res.json();
+        if (!json.success) return;
+        const { arrivals, departures } = json.data;
+        renderTodayPanel(arrivalsList,   arrivalsCount,   arrivals,   'No arrivals today.');
+        renderTodayPanel(departuresList, departuresCount, departures, 'No departures today.');
+    } catch (e) { console.error('Dashboard fetch failed', e); }
+}
