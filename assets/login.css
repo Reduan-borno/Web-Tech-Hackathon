@@ -8,60 +8,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #f0f4f8;
 }
 
 .container {
-    display: flex;
-    min-height: 400px;
-    width: 80%;
+    width: 400px;
     margin: 20px auto;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.left-panel {
-    width: 45%;
-    background-color: rgb(62, 64, 91);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    border-radius: 8px 0 0 8px;
-}
-
-.panel-brand {
-    left: 5px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 12px;
-}
-
-.panel-heading {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    line-height: 1.2;
-    margin-bottom: 8px;
-}
-
-.right-panel {
-    width: 55%;
-    padding: 40px;
-    background-color: #f0f4f8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 h2 {
-     margin-left: 20px;
     color: rgb(62, 64, 91);
     letter-spacing: 1px;
     margin-bottom: 6px;
 }
+
 p {
-    margin-left: 20px;
     color: rgb(62, 64, 91);
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -120,7 +81,7 @@ button[type="submit"] {
     width: 100%;
     padding: 11px;
     margin-top: 16px;
-    background-color:rgb(62, 64, 91);
+    background-color: rgb(62, 64, 91);
     color: white;
     border: none;
     border-radius: 10px;
