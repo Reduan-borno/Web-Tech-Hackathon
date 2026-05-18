@@ -1,15 +1,8 @@
-<?php
-include "../../controlers/loginController.php";
-session_start();
-if (isset($_COOKIE['remember_token']) && $_SESSION['role'] != "admin") {
-    header("Location: ../user.php");
-    exit;
-}
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Login — Hotel Booking</title>
     <link rel="stylesheet" href="../../assets/login.css">
 </head>
@@ -17,42 +10,27 @@ if (isset($_COOKIE['remember_token']) && $_SESSION['role'] != "admin") {
 <body>
 
     <div class="container">
+        <h2>Sign in</h2>
+        <p>Access your elite account class</p>
 
-    <div class="left-panel">
-        <p class="panel-brand">Meridian Hotel</p>
-        <h3 class="panel-heading">Experience<br>true luxury</h3>
-    </div>
+        <form id="loginForm" method="POST" action="../../controllers/loginController.php">
+            <label for="email">Email address</label>
+            <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            <span id="emailError"></span>
 
-        <div class="left-panel">
-            <p class="panel-brand">***** GRAND PALACE</p>
-            <h3 class="panel-heading">Experience<br>true luxury</h3>
-            <p class="panel-sub">5-star experience<br>awaits you</p>
-        </div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="••••••••" required>
+            <span id="passError"></span>
 
-        <div class="login-container">
-            <h2>Sign in</h2>
-            <p>Access your elite account class</p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember_me" name="remember_me" value="1">
+                <label for="remember_me">Remember me</label>
+            </div>
 
-            <form id="loginForm" method="POST" action="../../controllers/loginController.php">
-                <label for="email">Email address</label>
-                <input type="email" name="email" id="email" placeholder="name@example.com">
-                <span id="emailError"></span>
+            <button type="submit">Login →</button>
+        </form>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="••••••••">
-                <span id="passError"></span>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="remember_me" name="remember_me" value="1">
-                    <label for="remember_me">Remember me</label>
-                </div>
-
-                <button type="submit">Login →</button>
-            </form>
-
-            <p id="registerLink">No account? <a href="register.php">Register here</a></p>
-        </div>
-
+        <p id="registerLink">No account? <a href="register.php">Register here</a></p>
     </div>
 
 </body>
