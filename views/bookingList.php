@@ -81,3 +81,29 @@
             <canvas id="revenue-chart"></canvas>
         </div>
     </div>
+
+     <div class="today-grid">
+
+        <div class="today-panel arrivals">
+            <div class="today-panel-head">
+                <span class="dot"></span>
+                <h3>Today's Arrivals</h3>
+                <span class="badge-count" id="arrivals-count">0</span>
+            </div>
+            <div class="today-list" id="arrivals-list">
+                <div class="today-empty">Loading…</div>
+            </div>
+        </div>
+
+        <div class="today-panel departures">
+            <div class="today-panel-head">
+                <span class="dot"></span>
+                <h3>Today's Departures</h3>
+                <span class="badge-count" id="departures-count">0</span>
+            </div>
+            <div class="today-list" id="departures-list">
+                <div class="today-empty">Loading…</div>
+            </div>
+        </div>
+
+    </div>
