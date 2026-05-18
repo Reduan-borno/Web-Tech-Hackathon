@@ -389,3 +389,16 @@ async function fetchRevenue() {
         renderRevenueChart(labels, values);
     } catch (e) { console.error('Revenue fetch failed', e); }
 }
+
+btnApply.addEventListener('click', fetchBookings);
+
+btnReset.addEventListener('click', () => {
+    Array.from(statusFilter.options).forEach(o => o.selected = false);
+    fromDate.value = '';
+    toDate.value   = '';
+    fetchBookings();
+});
+
+[fromDate, toDate].forEach(inp =>
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') fetchBookings(); })
+);
