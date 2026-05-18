@@ -173,3 +173,12 @@
     </div>
 
     <p class="row-count" id="row-count"></p> 
+
+</main>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script>
+const API      = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php';
+const API_DASH = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php?action=dashboard';
+const API_REV  = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php?action=revenue';    
