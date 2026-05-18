@@ -379,3 +379,13 @@ async function fetchDashboard() {
         renderTodayPanel(departuresList, departuresCount, departures, 'No departures today.');
     } catch (e) { console.error('Dashboard fetch failed', e); }
 }
+
+async function fetchRevenue() {
+    try {
+        const res  = await fetch(API_REV, { credentials: 'same-origin' });
+        const json = await res.json();
+        if (!json.success) return;
+        const { labels, values } = json.data;
+        renderRevenueChart(labels, values);
+    } catch (e) { console.error('Revenue fetch failed', e); }
+}
