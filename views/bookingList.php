@@ -68,5 +68,4 @@
             <span class="stat-val" id="stat-revenue">—</span>
             <span class="stat-delta" id="stat-delta-revenue">all time</span>
         </div>
-    </div>    
-    
+    </div>   
