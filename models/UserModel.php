@@ -1,6 +1,5 @@
 <?php
 
-
 function createUser($connection,$name,$email,$password,$phone,$nationality,$role){
     $sql = "INSERT INTO users (name,email,password_hash,phone,nationality,role) VALUES (?,?,?,?,?,?)";
     $stmt = $connection->prepare($sql);
