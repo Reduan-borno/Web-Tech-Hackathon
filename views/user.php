@@ -21,8 +21,6 @@
                 <a href="../views/auth/login.php" class="nav-item logout">Logout</a>
             </nav>
         </div>
-
-
         <div class="main-content">
 
             <h2>My Profile</h2>
