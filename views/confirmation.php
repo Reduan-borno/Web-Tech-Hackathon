@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Booking Confirmation</title>
+     <link rel="stylesheet" href="../assets/confrmstyle.css">
 </head>
 <body>
     <h2>Booking Confirmation</h2>
