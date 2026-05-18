@@ -18,7 +18,7 @@
                 <a href="user.php" class="nav-item active">My Profile</a>
                 <a href="searchroom.php" class="nav-item">Search Rooms</a>
                 <a href="mybooking.php" class="nav-item">My Bookings</a>
-                <a href="../views/auth/login.php" class="nav-item logout">Logout</a>
+                <a href="../controllers/logoutController.php" class="nav-item logout">Logout</a>
             </nav>
         </div>
         <div class="main-content">
