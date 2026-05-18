@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 40px;
+    background-color: #f4f7fa;
+    font-family: Georgia, serif;
+    color: #1b2c3a;
+}
+
+h2{
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+table{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #d8dee6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+td{
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
+th{
+    padding: 14px;
+    background-color: #173f70;
+    color: white;
+    font-size: 15px;
+}
+
+input[type="date"],
+input[type="number"]{
+    width: 250px;
+    padding: 9px;
+    border: 2px solid #0f344d;
+    border-radius: 15px;
+    background-color: #f4f7fa;
+    font-family: Georgia, serif;
+}
+
+input[type="submit"]{
+    padding: 8px 18px;
+    border: 1px solid #333;
+    background-color: white;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
+
+input[type="submit"]:hover{
+    background-color: #173f70;
+    color: white;
+}
+
+h3{
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#roomResult{
+    margin-top: 20px;
+}
+
+#roomResult table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#roomResult td,
+#roomResult th{
+    border: 1px solid #d8dee6;
+    padding: 14px;
+}
+
+#roomResult a{
+    background-color: #173f70;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#roomResult a:hover{
+    background-color: #0f344d;
+}
