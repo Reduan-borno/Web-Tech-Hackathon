@@ -16,14 +16,14 @@
                 <a href="user.php" class="nav-item active">My Profile</a>
                 <a href="searchroom.php" class="nav-item">Search Rooms</a>
                 <a href="mybooking.php" class="nav-item">My Bookings</a>
-                <a href="../controllers/logoutController.php" class="nav-item logout">Logout</a>
+               <a href="auth/login.php" class="nav-item logout">Logout</a>
             </nav>
         </div>
         <div class="main-content">
             <h2>My Profile</h2>
             <p class="subtitle">Manage your account and preferences</p>
             <div class="booking-card">
-             <p class="no-booking">No upcoming stays.</p>
+                <p class="no-booking">No upcoming stays.</p>
             </div>
 
             <div class="form-grid">
@@ -62,7 +62,7 @@
                     </form>
                 </div>
 
-            
+
                 <div class="form-box">
                     <h3 class="form-box-title">Preferences</h3>
                     <form method="POST" action="../../controllers/profileController.php">
