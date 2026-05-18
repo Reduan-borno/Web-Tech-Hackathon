@@ -69,3 +69,15 @@
             <span class="stat-delta" id="stat-delta-revenue">all time</span>
         </div>
     </div>   
+    
+     <div class="chart-card">
+        <div class="chart-header">
+            <div>
+                <div class="chart-title">Weekly Revenue</div>
+                <div class="chart-sub">Total revenue per week — past 8 weeks</div>
+            </div>
+        </div>
+        <div class="chart-wrap">
+            <canvas id="revenue-chart"></canvas>
+        </div>
+    </div>
