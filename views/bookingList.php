@@ -182,3 +182,91 @@
 const API      = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php';
 const API_DASH = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php?action=dashboard';
 const API_REV  = '/Web_Tech_Final/Assignmet copy/controllers/bookingListController.php?action=revenue';    
+
+const statusFilter  = document.getElementById('status-filter');
+const fromDate      = document.getElementById('from-date');
+const toDate        = document.getElementById('to-date');
+const btnApply      = document.getElementById('btn-apply');
+const btnReset      = document.getElementById('btn-reset');
+const tbody         = document.getElementById('booking-tbody');
+const loader        = document.getElementById('table-loader');
+const emptyState    = document.getElementById('empty-state');
+const rowCount      = document.getElementById('row-count');
+const toast         = document.getElementById('toast');
+
+const statTotal     = document.getElementById('stat-total');
+const statConfirmed = document.getElementById('stat-confirmed');
+const statPending   = document.getElementById('stat-pending');
+const statRevenue   = document.getElementById('stat-revenue');
+
+const arrivalsList    = document.getElementById('arrivals-list');
+const departuresList  = document.getElementById('departures-list');
+const arrivalsCount   = document.getElementById('arrivals-count');
+const departuresCount = document.getElementById('departures-count');
+
+const fmtDate  = d => d ? new Date(d).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '—';
+const fmtMoney = n => n > 0 ? '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0 }) : '—';
+
+const BADGE_MAP = {
+    'confirmed'  : 'badge-confirmed',
+    'pending'    : 'badge-pending',
+    'cancelled'  : 'badge-cancelled',
+    'checked_in' : 'badge-checkedin',
+    'completed'  : 'badge-checkedout',
+};
+
+function showToast(msg, type = 'info') {
+    toast.textContent = msg;
+    toast.className   = toast toast-${type} show;
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove('show'), 3200);
+}
+
+function setLoading(on) {
+    loader.hidden = !on;
+    document.getElementById('booking-table').style.opacity = on ? '0.35' : '1';
+}
+
+
+function buildUrl() {
+    const url = new URL(API, location.origin);
+    url.searchParams.set('action', 'list');
+    Array.from(statusFilter.selectedOptions).map(o => o.value)
+        .forEach(s => url.searchParams.append('status[]', s));
+    if (fromDate.value) url.searchParams.set('from', fromDate.value);
+    if (toDate.value)   url.searchParams.set('to',   toDate.value);
+    return url;
+}
+
+function renderRows(bookings) {
+    tbody.innerHTML = '';
+    if (!bookings.length) {
+        emptyState.hidden = false;
+        rowCount.textContent = '';
+        return;
+    }
+    emptyState.hidden = true;
+    rowCount.textContent = Showing ${bookings.length} booking${bookings.length !== 1 ? 's' : ''};
+
+    bookings.forEach(b => {
+        const tr  = document.createElement('tr');
+        tr.dataset.id = b.booking_id;
+        const cls = BADGE_MAP[b.status] ?? 'badge-default';
+        const lbl = (b.status ?? '').replace('_', ' ');
+
+        tr.innerHTML = `
+            <td><a class="booking-link" href="/admin/bookingDetail.php?id=${b.booking_id}" onclick="event.stopPropagation()">#${b.booking_id}</a></td>
+            <td>${b.guest_name}</td>
+            <td><span style="font-family:var(--mono);font-size:.8rem">${b.room_number}</span></td>
+            <td>${b.room_type}</td>
+            <td>${fmtDate(b.checkin_date)}</td>
+            <td>${fmtDate(b.checkout_date)}</td>
+            <td style="font-weight:600">${fmtMoney(b.total_price)}</td>
+            <td><span class="badge ${cls}">${lbl}</span></td>
+        `;
+        tr.addEventListener('click', () => {
+            window.location.href = /admin/bookingDetail.php?id=${b.booking_id};
+        });
+        tbody.appendChild(tr);
+    });
+}
