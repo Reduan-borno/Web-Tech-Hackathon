@@ -402,3 +402,10 @@ btnReset.addEventListener('click', () => {
 [fromDate, toDate].forEach(inp =>
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') fetchBookings(); })
 );
+
+fetchBookings();
+fetchDashboard();
+fetchRevenue();
+</script>
+</body>
+</html>
