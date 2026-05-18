@@ -9,9 +9,8 @@
 <div class="container">
 
     <div class="left-panel">
-        <p class="panel-brand">***** GRAND PALACE</p>
+        <p class="panel-brand">Meridian Hotel</p>
         <h3 class="panel-heading">Experience<br>true luxury</h3>
-        <p class="panel-sub">5-star experience<br>awaits you</p>
     </div>
 
     <div class="login-container">
