@@ -47,4 +47,26 @@
         <p class="page-sub">Occupancy overview, revenue trends, and all reservations</p>
     </div>
 
+    <div class="stat-grid" id="stat-grid">
+        <div class="stat-card blue">
+            <span class="stat-label">Total Bookings</span>
+            <span class="stat-val" id="stat-total">—</span>
+            <span class="stat-delta" id="stat-delta-total">Loading…</span>
+        </div>
+        <div class="stat-card green">
+            <span class="stat-label">Confirmed</span>
+            <span class="stat-val" id="stat-confirmed">—</span>
+            <span class="stat-delta" id="stat-delta-confirmed">—</span>
+        </div>
+        <div class="stat-card amber">
+            <span class="stat-label">Pending</span>
+            <span class="stat-val" id="stat-pending">—</span>
+            <span class="stat-delta" id="stat-delta-pending">—</span>
+        </div>
+        <div class="stat-card teal">
+            <span class="stat-label">Total Revenue</span>
+            <span class="stat-val" id="stat-revenue">—</span>
+            <span class="stat-delta" id="stat-delta-revenue">all time</span>
+        </div>
+    </div>    
     
