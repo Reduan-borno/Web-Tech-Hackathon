@@ -93,4 +93,17 @@ class BookingModel {
         return $row ?: null;
     }
 
+     public function updateStatus(int $id, string $status): bool {
+        $allowed = ['pending', 'confirmed', 'checked_in', 'completed', 'cancelled'];
+        if (!in_array($status, $allowed)) return false;
+
+        $sql  = 'UPDATE bookings SET status = ? WHERE id = ?';
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param('si', $status, $id);
+        $ok   = $stmt->execute();
+        $stmt->close();
+        return $ok;
+    }
+    
+
     
