@@ -157,5 +157,20 @@ class BookingModel {
         return ['ok' => true, 'msg' => 'Checked out. Room is now available.'];
     }
 
-
+    public function getSummaryStats(): array {
+        $sql    = "
+            SELECT
+                COUNT(*)                                              AS total,
+                SUM(status = 'confirmed')                             AS confirmed,
+                SUM(status = 'pending')                               AS pending,
+                SUM(status = 'checked_in')                            AS checked_in,
+                SUM(status = 'cancelled')                             AS cancelled,
+                COALESCE(SUM(CASE WHEN status != 'cancelled'
+                                  THEN total_price END), 0)           AS revenue
+            FROM bookings
+        ";
+        $result = $this->db->query($sql);
+        return $result->fetch_assoc() ?? [];
+    }
+    
     
