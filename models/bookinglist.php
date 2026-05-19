@@ -38,3 +38,29 @@ class BookingModel {
                 foreach ($clean as $s) { $params[] = $s; $types .= 's'; }
             }
         }
+
+        if (!empty($filters['from'])) {
+            $sql .= ' AND b.checkin_date >= ?';
+            $params[] = $filters['from'];
+            $types   .= 's';
+        }
+        if (!empty($filters['to'])) {
+            $sql .= ' AND b.checkin_date <= ?';
+            $params[] = $filters['to'];
+            $types   .= 's';
+        }
+
+        $sql .= ' ORDER BY b.created_at DESC';
+
+        $stmt = $this->db->prepare($sql);
+        if ($params) $stmt->bind_param($types, ...$params);
+        $stmt->execute();
+        $result   = $stmt->get_result();
+        $bookings = [];
+        while ($row = $result->fetch_assoc()) $bookings[] = $row;
+        $stmt->close();
+
+        return $bookings;
+    }
+
+    
