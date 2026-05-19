@@ -128,6 +128,34 @@ class BookingModel {
             ? ['ok' => true,  'msg' => 'Checked in successfully.']
             : ['ok' => false, 'msg' => 'Database error during check-in.'];
     }
-    
+
+    public function checkOut(int $bookingId): array {
+        $chk  = "SELECT id, room_id, status FROM bookings WHERE id = ? LIMIT 1";
+        $stmt = $this->db->prepare($chk);
+        $stmt->bind_param('i', $bookingId);
+        $stmt->execute();
+        $row  = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+
+        if (!$row)                           return ['ok' => false, 'msg' => 'Booking not found.'];
+        if ($row['status'] !== 'checked_in') return ['ok' => false, 'msg' => 'Booking must be in Checked-In state to check out.'];
+
+        
+        $sql  = "UPDATE bookings SET status = 'completed' WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param('i', $bookingId);
+        $stmt->execute();
+        $stmt->close();
+
+        
+        $sql2  = "UPDATE rooms SET status = 'available' WHERE id = ?";
+        $stmt2 = $this->db->prepare($sql2);
+        $stmt2->bind_param('i', $row['room_id']);
+        $stmt2->execute();
+        $stmt2->close();
+
+        return ['ok' => true, 'msg' => 'Checked out. Room is now available.'];
+    }
+
 
     
