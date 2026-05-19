@@ -27,3 +27,14 @@ class BookingModel {
 
         $params = [];
         $types  = '';
+
+        if (!empty($filters['status']) && is_array($filters['status'])) {
+            $allowed      = ['pending', 'confirmed', 'checked_in', 'completed', 'cancelled'];
+            $clean        = array_values(array_filter($filters['status'],
+                                fn($s) => in_array($s, $allowed)));
+            if ($clean) {
+                $placeholders = implode(',', array_fill(0, count($clean), '?'));
+                $sql         .= " AND b.status IN ($placeholders)";
+                foreach ($clean as $s) { $params[] = $s; $types .= 's'; }
+            }
+        }
