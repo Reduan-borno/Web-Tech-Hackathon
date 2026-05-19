@@ -104,6 +104,30 @@ class BookingModel {
         $stmt->close();
         return $ok;
     }
+
+    public function checkIn(int $bookingId): array {
+        // Verify booking exists and is in 'confirmed' state
+        $chk  = "SELECT id, status, checkin_date FROM bookings WHERE id = ? LIMIT 1";
+        $stmt = $this->db->prepare($chk);
+        $stmt->bind_param('i', $bookingId);
+        $stmt->execute();
+        $row  = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+
+        if (!$row)                               return ['ok' => false, 'msg' => 'Booking not found.'];
+        if ($row['status'] !== 'confirmed')      return ['ok' => false, 'msg' => 'Booking must be in Confirmed state to check in.'];
+        if ($row['checkin_date'] !== date('Y-m-d')) return ['ok' => false, 'msg' => 'Check-in is only allowed on the scheduled check-in date.'];
+
+        $sql  = "UPDATE bookings SET status = 'checked_in', actual_checkin = NOW() WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param('i', $bookingId);
+        $ok   = $stmt->execute();
+        $stmt->close();
+
+        return $ok
+            ? ['ok' => true,  'msg' => 'Checked in successfully.']
+            : ['ok' => false, 'msg' => 'Database error during check-in.'];
+    }
     
 
     
