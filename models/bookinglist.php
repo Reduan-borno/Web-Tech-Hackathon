@@ -211,4 +211,42 @@ class BookingModel {
         return $rows;
     }
 
-    
+    public function getWeeklyRevenue(): array {
+        $sql = "
+            SELECT
+                YEARWEEK(checkin_date, 1)                  AS yw,
+                DATE_FORMAT(
+                    MIN(checkin_date), '%d %b'
+                )                                          AS week_label,
+                COALESCE(SUM(total_price), 0)              AS revenue
+            FROM bookings
+            WHERE checkin_date >= DATE_SUB(CURDATE(), INTERVAL 8 WEEK)
+              AND status NOT IN ('cancelled')
+            GROUP BY yw
+            ORDER BY yw ASC
+            LIMIT 8
+        ";
+        $result = $this->db->query($sql);
+        $labels = [];
+        $values = [];
+        while ($row = $result->fetch_assoc()) {
+            $labels[] = 'Wk ' . $row['week_label'];
+            $values[] = (float) $row['revenue'];
+        }
+        return ['labels' => $labels, 'values' => $values];
+    }
+
+     public function getRoomSummary(): array {
+        $sql    = "
+            SELECT
+                COUNT(*)                            AS total_rooms,
+                SUM(status = 'available')           AS available,
+                SUM(status = 'booked')              AS occupied,
+                SUM(status = 'maintenance')         AS maintenance
+            FROM rooms
+        ";
+        $result = $this->db->query($sql);
+        return $result->fetch_assoc() ?? [];
+    }
+}
+     
