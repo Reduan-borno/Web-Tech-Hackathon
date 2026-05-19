@@ -172,5 +172,24 @@ class BookingModel {
         $result = $this->db->query($sql);
         return $result->fetch_assoc() ?? [];
     }
-    
+
+    public function getTodayArrivals(): array {
+        $sql = "
+            SELECT
+                b.id        AS booking_id,
+                u.name      AS guest_name,
+                r.room_number
+            FROM bookings b
+            JOIN users u ON b.user_id = u.id
+            JOIN rooms r ON b.room_id = r.id
+            WHERE b.checkin_date = CURDATE()
+              AND b.status = 'confirmed'
+            ORDER BY b.id
+        ";
+        $result = $this->db->query($sql);
+        $rows   = [];
+        while ($row = $result->fetch_assoc()) $rows[] = $row;
+        return $rows;
+    }
+
     
